@@ -168,10 +168,49 @@ const numByEyeColor = characters.reduce((acc, curr) => {
 log("EYE COLOR");
 log(numByEyeColor);
 
-//4. Get total number of characters in all the character names
+//4. Get total number of letters in all the character names
+const totalLettersInNames = characters.reduce((acc, curr) => {
+    return acc + curr.name.length;
+}, 0);
+log("TOTAL LETTERS IN NAMES");
+log(totalLettersInNames);
 
 
 
+
+//***EVERY***
+clr();
+log("**EVERY**");
+log("ALL");
+log(characters);
+
+//1. Does every character have blue eyes?
+const allBlueEyes = characters.every(character =>
+    character.eye_color == 'blue'
+);
+log("ALL BLUE EYES");
+log(allBlueEyes);
+
+//2. Does every character have mass more than 40?
+const allMassOver40 = characters.every(character =>
+    character.mass > 40
+);
+log("ALL MASS > 40");
+log(allMassOver40);
+
+//3. Is every character shorter than 200?
+const allHeightsOver200 = characters.every(character =>
+    character.height < 200
+);
+log("ALL HEIGHTS > 200");
+log(allHeightsOver200);
+
+//4. Is every character male?
+const allMales = characters.every(character =>
+    character.gender == 'male'
+);
+log("ALL MALES");
+log(allMales);
 
 
 
