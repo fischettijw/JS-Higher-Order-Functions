@@ -11,6 +11,18 @@ log("**FILTER**");
 log("ALL");
 log(characters);
 //1. Get characters with mass greater than 100
+function massGreater100__(ccc) {
+    const StarWarChars = [];
+    for (let c = 0; c < 4; c++) {
+        if (ccc[c].mass > 100) {
+            StarWarChars.push(ccc[c]);
+        }
+    }
+    return StarWarChars;
+}
+// let charsGreater100 = [];
+const charsGreater100 = massGreater100__(characters);
+log(charsGreater100);
 
 const massGreater100_ = characters.filter(massGreater_);
 log("MASS_");
