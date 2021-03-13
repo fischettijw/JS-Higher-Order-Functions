@@ -10,254 +10,255 @@ clr();
 log("**FILTER**");
 log("ALL");
 log(characters);
-//1. Get characters with mass greater than 100
-function massGreater100__(ccc) {
-    const StarWarChars = [];
-    for (let c = 0; c < 4; c++) {
-        if (ccc[c].mass > 100) {
-            StarWarChars.push(ccc[c]);
-        }
-    }
-    return StarWarChars;
-}
-// let charsGreater100 = [];
-const charsGreater100 = massGreater100__(characters);
-log(charsGreater100);
+// //1. Get characters with mass greater than 100
+// function massGreater100_OLD(ccc) {
+//     const StarWarChars = [];
+//     for (let c = 0; c < 4; c++) {
+//         if (ccc[c].mass > 100) {
+//             StarWarChars.push(ccc[c]);
+//         }
+//     }
+//     return StarWarChars;
+// }
+// // let charsGreater100 = [];
+// const charsGreater100 = massGreater100_OLD(characters);
+// log("OLD");
+// log(charsGreater100);
 
-const massGreater100_ = characters.filter(massGreater_);
-log("MASS_");
-log(massGreater100_);
+// const massGreater100CallBack = characters.filter(massGreater);
+// log("CALL BACK");
+// log(massGreater100CallBack);
 
-function massGreater_(char) {
-    return char.mass > 100;
-}
+// function massGreater(char) {
+//     return char.mass > 100;
+// }
 
-const massGreater100 = characters.filter((character) => { return character.mass > 100; });
-// const massGreater100 = characters.filter(character => character.mass > 100)
-log("MASS");
-log(massGreater100);
+// const massGreater100ArrowFunc = characters.filter((character) => { return character.mass > 100; });
+// // const massGreater100 = characters.filter(character => character.mass > 100)
+// log("ARROW FUNCTION");
+// log(massGreater100ArrowFunc);
 
-//2. Get characters with height less than 200
-const heightLess200 = characters.filter(characters => characters.height < 200);
-log("HEIGHT");
-log(heightLess200);
+// //2. Get characters with height less than 200
+// const heightLess200 = characters.filter(characters => characters.height < 200);
+// log("HEIGHT");
+// log(heightLess200);
 
-//3. Get all male characters
-const males = characters.filter(characters => characters.gender == "male");
-log("MALES");
-log(males);
+// //3. Get all male characters
+// const males = characters.filter(characters => characters.gender == "male");
+// log("MALES");
+// log(males);
 
-//4. Get all female characters
-const females = characters.filter(characters => characters.gender == "female");
-log("FEMALES");
-log(females);
-
-
-//***MAP***
-clr();
-log("**MAP**");
-log("ALL");
-log(characters);
-
-//1. Get array of all names
-const names = characters.map(character => character.name);
-log("NAMES");
-log(names);
-
-//2. Get array of all heights
-const heights = characters.map(character => character.height);
-log("HEIGHT");
-log(heights);
-
-//3. Get array of objects with just name and height properties
-const nameHeight = characters.map(character => ({
-    name: character.name,
-    height: character.height
-}));
-log("NAME/HEIGHT");
-log(nameHeight);
-
-//4. Get array of all first names
-const firstNames = characters.map(character => character.name.split(' ')[0])
-log("FIRST NAMES");
-log(firstNames);
+// //4. Get all female characters
+// const females = characters.filter(characters => characters.gender == "female");
+// log("FEMALES");
+// log(females);
 
 
+// //***MAP***
+// clr();
+// log("**MAP**");
+// log("ALL");
+// log(characters);
 
-//***SOME***
-clr();
-log("**SOME**");
-log("ALL");
-log(characters);
+// //1. Get array of all names
+// const names = characters.map(character => character.name);
+// log("NAMES");
+// log(names);
 
-// 1. Is there at least one male character?
-const isOneMale = characters.some(character => character.gender == 'male');
-log("ONE MALE");
-log(isOneMale);
+// //2. Get array of all heights
+// const heights = characters.map(character => character.height);
+// log("HEIGHT");
+// log(heights);
 
-// 2. Is there at least one character with blue eyes?
-const isOneBlueEyes = characters.some(character => character.eye_color == 'blue');
-log("ONE BLUE EYES");
-log(isOneBlueEyes);
+// //3. Get array of objects with just name and height properties
+// const nameHeight = characters.map(character => ({
+//     name: character.name,
+//     height: character.height
+// }));
+// log("NAME/HEIGHT");
+// log(nameHeight);
 
-// 3. Is there at least one character taller than 210?
-const isTaller210 = characters.some(character => character.height > 210);
-log("TALLER 210");
-log(isTaller210);
-
-// 4. Is there at least one character that has mass less than 50?
-const isMassLess50 = characters.some(character => character.mass < 50);
-log("MASS < 50");
-log(isMassLess50);
+// //4. Get array of all first names
+// const firstNames = characters.map(character => character.name.split(' ')[0])
+// log("FIRST NAMES");
+// log(firstNames);
 
 
 
-//***SORT***
-clr();
-log("**SORT**");
-log("ALL");
-log(characters);
+// //***SOME***
+// clr();
+// log("**SOME**");
+// log("ALL");
+// log(characters);
 
-//1. Sort by mass
-const sortByMass = characters.sort((a, b) => a.mass - b.mass);
-log("SORT MASS");
-log(sortByMass);
+// // 1. Is there at least one male character?
+// const isOneMale = characters.some(character => character.gender == 'male');
+// log("ONE MALE");
+// log(isOneMale);
 
+// // 2. Is there at least one character with blue eyes?
+// const isOneBlueEyes = characters.some(character => character.eye_color == 'blue');
+// log("ONE BLUE EYES");
+// log(isOneBlueEyes);
 
-//2. Sort by height
-const sortByHeight = characters.sort((a, b) => a.height - b.height);
-log("SORT HEIGHT");
-log(sortByHeight);
+// // 3. Is there at least one character taller than 210?
+// const isTaller210 = characters.some(character => character.height > 210);
+// log("TALLER 210");
+// log(isTaller210);
 
-//3. Sort by name
-const sortByName = characters.sort((a, b) => {
-    if (a.name < b.name) return -1;
-    return 1;
-});
-log("SORT NAME");
-log(sortByName);
-
-//4. Sort by gender
-const sortByGender = characters.sort((a, b) => {
-    if (a.gender == 'female') return -1;
-    return 1;
-});
-log("SORT GENDER");
-log(sortByGender);
+// // 4. Is there at least one character that has mass less than 50?
+// const isMassLess50 = characters.some(character => character.mass < 50);
+// log("MASS < 50");
+// log(isMassLess50);
 
 
 
-//***REDUCE***
-clr();
-log("**REDUCE**");
-log("ALL");
-log(characters);
+// //***SORT***
+// clr();
+// log("**SORT**");
+// log("ALL");
+// log(characters);
 
-//1. Get total mass of all characters
-const totalMass = characters.reduce((acc, curr) => {
-    return acc + curr.mass;
-}, 0);
-log("TOTAL MASS");
-log(totalMass);
+// //1. Sort by mass
+// const sortByMass = characters.sort((a, b) => a.mass - b.mass);
+// log("SORT MASS");
+// log(sortByMass);
 
-//2. Get total height of all characters
-const totalHeight = characters.reduce((acc, curr) => {
-    return acc + curr.height;
-}, 0);
-log("TOTAL HEIGHT");
-log(totalHeight);
 
-//3. Get total number of characters by eye color
-const numByEyeColor = characters.reduce((acc, curr) => {
-    const color = curr.eye_color;
-    if (acc[color]) {
-        acc[color]++;
-    } else {
-        acc[color] = 1;
-    }
-    return acc;
-}, {});
-log("EYE COLOR");
-log(numByEyeColor);
+// //2. Sort by height
+// const sortByHeight = characters.sort((a, b) => a.height - b.height);
+// log("SORT HEIGHT");
+// log(sortByHeight);
 
-//4. Get total number of letters in all the character names
-const totalLettersInNames = characters.reduce((acc, curr) => {
-    return acc + curr.name.length;
-}, 0);
-log("TOTAL LETTERS IN NAMES");
-log(totalLettersInNames);
+// //3. Sort by name
+// const sortByName = characters.sort((a, b) => {
+//     if (a.name < b.name) return -1;
+//     return 1;
+// });
+// log("SORT NAME");
+// log(sortByName);
+
+// //4. Sort by gender
+// const sortByGender = characters.sort((a, b) => {
+//     if (a.gender == 'female') return -1;
+//     return 1;
+// });
+// log("SORT GENDER");
+// log(sortByGender);
 
 
 
+// //***REDUCE***
+// clr();
+// log("**REDUCE**");
+// log("ALL");
+// log(characters);
 
-//***EVERY***
-clr();
-log("**EVERY**");
-log("ALL");
-log(characters);
+// //1. Get total mass of all characters
+// const totalMass = characters.reduce((acc, curr) => {
+//     return acc + curr.mass;
+// }, 0);
+// log("TOTAL MASS");
+// log(totalMass);
 
-//1. Does every character have blue eyes?
-const allBlueEyes = characters.every(character =>
-    character.eye_color == 'blue'
-);
-log("ALL BLUE EYES");
-log(allBlueEyes);
+// //2. Get total height of all characters
+// const totalHeight = characters.reduce((acc, curr) => {
+//     return acc + curr.height;
+// }, 0);
+// log("TOTAL HEIGHT");
+// log(totalHeight);
 
-//2. Does every character have mass more than 40?
-const allMassOver40 = characters.every(character =>
-    character.mass > 40
-);
-log("ALL MASS > 40");
-log(allMassOver40);
+// //3. Get total number of characters by eye color
+// const numByEyeColor = characters.reduce((acc, curr) => {
+//     const color = curr.eye_color;
+//     if (acc[color]) {
+//         acc[color]++;
+//     } else {
+//         acc[color] = 1;
+//     }
+//     return acc;
+// }, {});
+// log("EYE COLOR");
+// log(numByEyeColor);
 
-//3. Is every character shorter than 200?
-const allHeightsOver200 = characters.every(character =>
-    character.height < 200
-);
-log("ALL HEIGHTS > 200");
-log(allHeightsOver200);
-
-//4. Is every character male?
-const allMales = characters.every(character =>
-    character.gender == 'male'
-);
-log("ALL MALES");
-log(allMales);
-
+// //4. Get total number of letters in all the character names
+// const totalLettersInNames = characters.reduce((acc, curr) => {
+//     return acc + curr.name.length;
+// }, 0);
+// log("TOTAL LETTERS IN NAMES");
+// log(totalLettersInNames);
 
 
-//***FILTER***
-//1. Get characters with mass greater than 100
-//2. Get characters with height less than 200
-//3. Get all male characters
-//4. Get all female characters
 
-//***MAP***
-//1. Get array of all names
-//2. Get array of all heights
-//3. Get array of objects with just name and height properties
-//4. Get array of all first names
 
-//***REDUCE***
-//1. Get total mass of all characters
-//2. Get total height of all characters
-//3. Get total number of characters by eye color
-//4. Get total number of characters in all the character names
+// //***EVERY***
+// clr();
+// log("**EVERY**");
+// log("ALL");
+// log(characters);
 
-//***SORT***
-//1. Sort by mass
-//2. Sort by height
-//3. Sort by name
-//4. Sort by gender
+// //1. Does every character have blue eyes?
+// const allBlueEyes = characters.every(character =>
+//     character.eye_color == 'blue'
+// );
+// log("ALL BLUE EYES");
+// log(allBlueEyes);
 
-//***EVERY***
-//1. Does every character have blue eyes?
-//2. Does every character have mass more than 40?
-//3. Is every character shorter than 200?
-//4. Is every character male?
+// //2. Does every character have mass more than 40?
+// const allMassOver40 = characters.every(character =>
+//     character.mass > 40
+// );
+// log("ALL MASS > 40");
+// log(allMassOver40);
 
-//***SOME***
-//1. Is there at least one male character?
-//2. Is there at least one character with blue eyes?
-//3. Is there at least one character taller than 210?
-//4. Is there at least one character that has mass less than 50?
+// //3. Is every character shorter than 200?
+// const allHeightsOver200 = characters.every(character =>
+//     character.height < 200
+// );
+// log("ALL HEIGHTS > 200");
+// log(allHeightsOver200);
+
+// //4. Is every character male?
+// const allMales = characters.every(character =>
+//     character.gender == 'male'
+// );
+// log("ALL MALES");
+// log(allMales);
+
+
+
+// //***FILTER***
+// //1. Get characters with mass greater than 100
+// //2. Get characters with height less than 200
+// //3. Get all male characters
+// //4. Get all female characters
+
+// //***MAP***
+// //1. Get array of all names
+// //2. Get array of all heights
+// //3. Get array of objects with just name and height properties
+// //4. Get array of all first names
+
+// //***REDUCE***
+// //1. Get total mass of all characters
+// //2. Get total height of all characters
+// //3. Get total number of characters by eye color
+// //4. Get total number of characters in all the character names
+
+// //***SORT***
+// //1. Sort by mass
+// //2. Sort by height
+// //3. Sort by name
+// //4. Sort by gender
+
+// //***EVERY***
+// //1. Does every character have blue eyes?
+// //2. Does every character have mass more than 40?
+// //3. Is every character shorter than 200?
+// //4. Is every character male?
+
+// //***SOME***
+// //1. Is there at least one male character?
+// //2. Is there at least one character with blue eyes?
+// //3. Is there at least one character taller than 210?
+// //4. Is there at least one character that has mass less than 50?
